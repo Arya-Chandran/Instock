@@ -1,0 +1,19 @@
+@use "./layout-grid" as *;
+@use "./type-kit" as *;
+@use "./colors" as *;
+
+/* text link */
+
+@mixin text-link {
+    margin-right: pxToRem(4);
+    @include mobile-h3;
+    color: $instock-indigo;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+    @include tablet-breakpoint {
+        @include tablet-h3;
+        color: $instock-indigo;
+    }
+}

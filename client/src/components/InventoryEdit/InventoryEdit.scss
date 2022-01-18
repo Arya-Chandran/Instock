@@ -1,0 +1,267 @@
+@use "../../styles/partials/call-to-actions" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/form-fields" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/layout-grid" as *;
+@use "../../styles/partials/type-kit" as *;
+
+.inventory {
+  width: 100%;
+  padding: 0 pxToRem(16);
+  background-color: $light-grey;
+
+  @include tablet-breakpoint {
+    padding: 0 pxToRem(32);
+  }
+
+  @include desktop-breakpoint {
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    position: relative;
+    top: pxToRem(-64);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: pxToRem(3);
+    text-align: left;
+    background-color: $white;
+
+    @include tablet-breakpoint {
+      top: pxToRem(-94);
+    }
+
+    @include desktop-breakpoint {
+      margin: 0 auto;
+      max-width: pxToRem(1020);
+    }
+  }
+
+  &__header {
+    display: flex;
+    padding: pxToRem(32) pxToRem(28) pxToRem(24) pxToRem(24);
+    border-bottom: pxToRem(1) solid $cloud;
+
+    @include tablet-breakpoint {
+      padding: pxToRem(36) pxToRem(32) pxToRem(21) pxToRem(32);
+    }
+
+    @include desktop-breakpoint {
+      padding: pxToRem(32) pxToRem(44) pxToRem(21) pxToRem(40);
+    }
+  }
+
+  &__title {
+    @include mobile-h1;
+    padding-left:pxToRem(4);
+
+    @include desktop-breakpoint {
+      @include tablet-h1;
+    }
+  }
+
+  &__form {
+    &--top-container {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet-breakpoint {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: pxToRem(24);
+        padding-bottom: pxToRem(32);
+      }
+
+    }
+
+    &--inventory-details {
+      display: flex;
+      flex-direction: column;
+      border-bottom: 1px solid $cloud;
+      padding: pxToRem(16) pxToRem(24) pxToRem(24);
+
+      @include tablet-breakpoint {
+        margin-bottom: 0;
+        padding: 0 pxToRem(32) 0;
+        border-bottom: none;
+        border-right: pxToRem(1) solid $cloud;
+        width: 100%;
+      }
+
+      @include desktop-breakpoint {
+        padding: 0 pxToRem(40) 0;
+      }
+    }
+
+    &--subtitle {
+      @include mobile-h2;
+      padding-bottom: pxToRem(8);
+
+      @include tablet-breakpoint {
+        @include tablet-h2;
+      }
+    }
+
+    &--label-field {
+      padding-top: pxToRem(12);
+      @include bold-style( pxToRem(13),  pxToRem(20));
+
+      @include tablet-breakpoint {
+        padding-top: 24px;
+        @include bold-style(pxToRem(14), pxToRem(22));
+      }
+    }
+
+    &--input-name {
+      @include form-field;
+    }
+
+    &--input-invalid {
+      @include form-field;
+      border: pxToRem(1) solid $red;
+
+      &:focus {
+        outline: none;
+        border-color: $red;
+      }
+    }
+
+    &--error-state {
+      display: flex;
+    }
+
+    &--error-image {
+      width: pxToRem(16);
+      height: pxToRem(16);
+      padding-right: pxToRem(5.33);
+      padding-top: pxToRem(4);
+    }
+
+    &--error-field {
+      @include regular-style(pxToRem(12), pxToRem(18));
+      color: $red;
+    }
+
+    &--input-description {
+      @include form-field;
+      height: pxToRem(120);
+      resize: none;
+
+      @include tablet-breakpoint {
+        height: pxToRem(120);
+      }
+
+      @include desktop-breakpoint {
+      }
+    }
+
+    &--input-invalid-des {
+      @include form-field;
+      border: pxToRem(1) solid $red;
+      height: pxToRem(120);
+      resize: none;
+      &:focus {
+        outline: none;
+        border-color: $red;
+      }
+
+      @include tablet-breakpoint {
+        height: pxToRem(120);
+      }
+
+    }
+
+    &--input-category {
+      @include form-field;
+      padding-right: pxToRem(4);
+    }
+
+    &--contact-details {
+      display: flex;
+      flex-direction: column;
+      padding: pxToRem(16) pxToRem(24) pxToRem(24);
+
+      @include tablet-breakpoint {
+        padding: 0 pxToRem(32) 0;
+        width: 100%;
+      }
+    
+      @include desktop-breakpoint {
+        padding: 0 pxToRem(40) 0;
+      }
+    }
+
+    &--input-field {
+      display: flex;
+      padding-bottom: pxToRem(16);
+
+      @include tablet-breakpoint {
+        padding-bottom: pxToRem(16);
+      }
+    }
+
+    &--input-status1 {
+      @include regular-style(pxToRem(13), pxToRem(20), $slate);
+      padding-left: pxToRem(8);
+      padding-right: pxToRem(89);
+
+      @include tablet-breakpoint {
+        @include regular-style(pxToRem(14), pxToRem(22));
+        padding-right: pxToRem(44.5);
+      }
+    }
+
+    &--input-status2 {
+      @include regular-style(pxToRem(13), pxToRem(20), $instock-black);
+      padding-left: pxToRem(8);
+
+      @include tablet-breakpoint {
+        @include regular-style(14px, 22px);
+        padding-left: pxToRem(8);
+      }
+    }
+
+    &--input-warehouse {
+      @include form-field;
+    }
+
+    &--bottom-container {
+      padding: pxToRem(16) pxToRem(24);
+      display: flex;
+      justify-content: space-between;
+      background: rgba(247, 248, 249, 0.7);
+      border-radius: 0px 0px 3px 3px;
+
+      @include tablet-breakpoint {
+        justify-content: flex-end;
+        padding: pxToRem(16) pxToRem(32);
+      }
+
+      @include desktop-breakpoint {
+        padding: pxToRem(16) pxToRem(40);
+      }
+    }
+
+    &--button-right {
+      margin: 0;
+      width: pxToRem(139);
+     
+
+      @include tablet-breakpoint {
+        width: pxToRem(72);
+        margin-right:pxToRem(16);
+      }
+    }
+
+    &--button-left {
+      margin: 0;
+      width: pxToRem(139);
+
+      @include tablet-breakpoint {
+        width: pxToRem(61);
+      }
+    }
+  }
+}

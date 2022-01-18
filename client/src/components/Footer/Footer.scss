@@ -1,0 +1,29 @@
+@use '../../styles/partials/call-to-actions' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/form-fields' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/layout-grid' as *;
+@use '../../styles/partials/type-kit' as *;
+
+.footer {
+    @include mobile-h3;
+    background-color: $light-grey;
+    color: $slate;
+    font-weight: 300;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 125px;
+    padding-bottom: 35px;
+    @include tablet-breakpoint {
+        margin-top: 200px;
+        padding-top: 0px;
+        padding-bottom: 30px;
+        font-size: 0.75rem;
+        @include desktop-breakpoint {
+            margin-top: 260px;
+           padding-bottom: 40px;
+           font-size: 0.8rem;
+        }
+    }
+}

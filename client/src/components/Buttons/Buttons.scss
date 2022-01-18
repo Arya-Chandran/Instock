@@ -1,0 +1,69 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/layout-grid" as *;
+@use "../../styles/partials/type-kit" as *;
+@use "../../styles/partials/colors" as *;
+
+/* buttons */
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: pxToRem(36);
+  padding: pxToRem(8) 0;
+  border: none;
+  border-radius: pxToRem(20);
+  @include mobile-h3;
+  cursor: pointer;
+  @include tablet-breakpoint {
+    width: auto;
+    height: pxToRem(38);
+    padding: pxToRem(8) pxToRem(16);
+    @include tablet-h3;
+  }
+  /* primary button */
+  &--primary {
+    background-color: $instock-indigo;
+    color: $white;
+    &:hover {
+      background-color: $graphite;
+    }
+  }
+  /* secondary button */
+  &--secondary {
+    border: pxToRem(1) solid $cloud;
+    background-color: $white;
+    color: $slate;
+    &:hover {
+      border: pxToRem(1) solid $instock-indigo;
+      color: $instock-indigo;
+    }
+  }
+  /* delete button */
+  &--delete {
+    @extend .button--primary;
+    background-color: $red;
+  }
+  /* edit button */
+  &--edit {
+    @extend .button--primary;
+    width: pxToRem(36);
+    padding: 0;
+    font-size: 0;
+    @include tablet-breakpoint {
+      width: auto;
+      padding: pxToRem(8) pxToRem(16);
+      @include tablet-h3;
+      color: $white;
+    }
+  }
+  &__icon {
+    width: pxToRem(20);
+    height: pxToRem(20);
+    filter: brightness(0) invert(1);
+    @include tablet-breakpoint {
+      margin-right: pxToRem(6);
+    }
+  }
+}

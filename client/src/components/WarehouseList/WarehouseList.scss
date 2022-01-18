@@ -1,0 +1,273 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/layout-grid" as *;
+@use "../../styles/partials/type-kit" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/form-fields" as *;
+@use "../../styles/partials/call-to-actions" as *;
+
+.warehouse-list {
+    min-width: $mobile-width;
+    padding: 0 pxToRem(16);
+    background-color: $light-grey;
+    @include tablet-breakpoint {
+        padding: 0 pxToRem(32);
+    }
+    &__container {
+        position: relative;
+        top: pxToRem(-64);
+        border-radius: pxToRem(3);
+        box-shadow: 0 pxToRem(2) pxToRem(5) rgba($instock-black, 0.1);
+        background-color: $white;
+        @include tablet-breakpoint {
+            top: pxToRem(-94);
+            max-width: pxToRem(1020);
+            margin: 0 auto;
+        }
+    }
+    &__header {
+        position: relative;
+        top: pxToRem(1);
+        padding: pxToRem(32) pxToRem(24) pxToRem(24);
+        border-bottom: pxToRem(1) solid $cloud;
+        @include tablet-breakpoint {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            padding: pxToRem(32) pxToRem(32) pxToRem(22);
+            border-bottom: none;
+        }
+        @include desktop-breakpoint {
+            padding: pxToRem(32) pxToRem(40) pxToRem(22);
+        }
+    }
+    &__page-heading {
+        @include mobile-h1;
+        @include tablet-breakpoint {
+            @include tablet-h1;
+        }
+    }
+    &__search-bar-container {
+        @include tablet-breakpoint {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            width: 100%;
+        }
+    }
+    &__search-bar {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        margin: pxToRem(16) 0;
+        @include tablet-breakpoint {
+            width: 39.5%;
+            margin: 0 pxToRem(16) 0 0;
+        }
+        @include desktop-breakpoint {
+            max-width: pxToRem(274);
+        }
+    }
+    &__search-bar-input {
+        @include form-field;
+        margin-top: 0;
+    }
+    &__search-bar-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: pxToRem(24);
+        height: pxToRem(24);
+        border: none;
+        margin-right: pxToRem(17);
+        background-color: $white;
+        cursor: not-allowed;
+    }
+    &__add-warehouse {
+        text-decoration: none;
+    }
+    &__columns {
+        display: none;
+        @include tablet-breakpoint {
+            display: flex;
+            position: relative;
+            top: pxToRem(1);
+            height: pxToRem(40);
+            padding: 0 pxToRem(32);
+            background-color: $light-grey;
+        }
+        @include desktop-breakpoint {
+            padding: 0 pxToRem(40);
+        }
+    }
+    &__column {
+        @include tablet-breakpoint {
+            display: flex;
+            align-items: center;
+            @include tablet-h4;
+            list-style-type: none;
+        }
+        &--location {
+            @include tablet-breakpoint {
+                width: 23.5%;
+            }
+        }
+        &--address {
+            @include tablet-breakpoint {
+                width: 18.75%;
+            }
+            @include desktop-breakpoint {
+                width: 27.75%;
+            }
+        }
+        &--name {
+            @include tablet-breakpoint {
+                width: 18.75%;
+            }
+            @include desktop-breakpoint {
+                width: 18.5%;
+            }
+        }
+        &--contact {
+            @include tablet-breakpoint {
+                width: 28.75%;
+            }
+            @include desktop-breakpoint {
+                width: 18.5%;
+            }
+        }
+        &--actions {
+            @include tablet-breakpoint {
+                justify-content: flex-end;
+                width: 10.25%;
+            }
+            @include desktop-breakpoint {
+                width: 11.75%;
+            }
+        }
+    }
+    &__column-icon {
+        @include tablet-breakpoint {
+            width: pxToRem(16);
+            height: pxToRem(16);
+            margin-left: pxToRem(4);
+        }
+    }
+    &__table {
+        max-height: pxToRem(1378);
+        overflow: scroll;
+        @include tablet-breakpoint {
+            max-height: pxToRem(670);
+        }
+        @include desktop-breakpoint {
+            max-height: pxToRem(538);
+        }
+    }
+    &__item {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 pxToRem(24) pxToRem(24);
+        border-top: pxToRem(1) solid $cloud;
+        &:hover {
+            background-color: rgba($instock-indigo, 0.07);
+        }
+        @include tablet-breakpoint {
+            align-items: center;
+            flex-wrap: nowrap;
+            padding: pxToRem(16) pxToRem(32);
+        }
+        @include desktop-breakpoint {
+            padding: pxToRem(16) pxToRem(40);
+        }
+    }
+    &__details-container {
+        width: 50%;
+        margin-top: pxToRem(16);
+        @include tablet-breakpoint {
+            width: auto;
+            padding-right: pxToRem(16);
+            margin-top: 0;
+        }
+        &--location {
+            @include tablet-breakpoint {
+                width: 23.5%;
+                order: 1;
+            }
+        }
+        &--name {
+            @include tablet-breakpoint {
+                width: 18.75%;
+                order: 3;
+            }
+            @include desktop-breakpoint {
+                width: 18.5%;
+            }
+        }
+        &--address {
+            padding-right: pxToRem(24);
+            @include tablet-breakpoint {
+                width: 18.75%;
+                order: 2;
+            }
+            @include desktop-breakpoint {
+                width: 27.75%;
+            }
+        }
+        &--contact {
+            @include tablet-breakpoint {
+                width: 28.75%;
+                order: 4;
+            }
+            @include desktop-breakpoint {
+                width: 18.5%;
+            }
+        }
+        &--actions {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            @include tablet-breakpoint {
+                justify-content: flex-end;
+                width: 10.25%;
+                padding-right: 0;
+                order: 5;
+            }
+            @include desktop-breakpoint {
+                width: 11.75%;
+            }
+        }
+    }
+    &__details-heading {
+        margin-bottom: pxToRem(4);
+        @include mobile-h4;
+        @include tablet-breakpoint {
+            display: none;
+        }
+    }
+    &__link-container {
+        display: flex;
+        align-items: center;
+    }
+    &__link {
+        @include text-link;
+    }
+    &__link-icon {
+        width: pxToRem(20);
+        height: pxToRem(20);
+    }
+    &__details {
+        @include mobile-p2;
+        @include tablet-breakpoint {
+            @include tablet-p2;
+        }
+    }
+    &__action-icon {
+        margin-left: pxToRem(16);
+    }
+    &__edit-warehouse {
+        height: pxToRem(24);
+    }
+}

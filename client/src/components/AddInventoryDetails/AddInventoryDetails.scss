@@ -1,0 +1,245 @@
+@use '../../styles/partials/call-to-actions' as *;
+@use '../../styles/partials/colors' as *;
+@use '../../styles/partials/form-fields' as *;
+@use '../../styles/partials/global' as *;
+@use '../../styles/partials/layout-grid' as *;
+@use '../../styles/partials/type-kit' as *;
+
+.inventorypage-title {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 5px;
+    @include mobile-h1;
+    @include tablet-breakpoint {
+        margin-left: 30px;
+        @include tablet-h1
+    }
+        &__arrow {
+            margin-bottom: 35px;
+            margin-right: 5px;  
+            @include tablet-breakpoint {
+                margin-bottom: 0px;
+            }  
+        }
+}
+
+.item-wrapper {
+    @include tablet-breakpoint {
+        height: 512px;
+        border-top: 1px solid $cloud;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        @include desktop-breakpoint {
+            padding-bottom: 35px;
+            padding-top: 25px;
+        }
+    }
+}
+
+.inventoryabsolute-wrapper {
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    border-radius: 3px;
+    margin: -95px 10px;
+    @include tablet-breakpoint {
+        margin: -126px 30px;
+        @include desktop-breakpoint {
+           
+        }
+    }
+}
+
+.form-wrapper2 {
+    @include tablet-breakpoint {
+    display: flex;
+    flex-direction: column;
+    }
+ }
+
+.itemdetails-wrapper {
+    @include tablet-breakpoint {
+        display: flex;
+        padding-bottom: 3rem;
+    }
+}
+
+.itemdetails-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 15px;
+    border-top: 1px solid $cloud;
+    @include tablet-breakpoint {
+        border-top: none;
+        width: 50%;
+        border-right: 1px solid $cloud;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 0;
+    }
+    &__title {
+        @include mobile-h2;
+        margin-bottom: 20px;
+        @include tablet-breakpoint {
+            @include tablet-h2;
+            @include desktop-breakpoint {
+                margin-bottom:30px;
+            }
+        }
+    }
+}
+
+.itemdetailsform-title {
+    @include mobile-h3;
+    margin-top: 15px;
+    @include tablet-breakpoint {
+        @include tablet-h3;
+        @include desktop-breakpoint {
+            margin-top: 25px;
+        }
+    }
+}
+
+.itemdetailsform-input {
+    @include form-field;
+    @include mobile-p2;
+    margin-bottom: 30px;
+}
+
+.itemdetailsform-input__desc {
+    @include form-field;
+    @include mobile-p2;
+    padding-bottom: 100px;
+    padding-top: 15px;
+    margin-bottom: 30px;
+}
+
+.itemavailability-container {
+    margin-top:25px;
+    padding: 15px 20px 25px 20px;
+    border-top: 1px solid $cloud;
+    @include tablet-breakpoint {
+        border-top: none;
+        margin-top: 0;
+        padding-bottom: 0;
+        width:50%;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 0;
+    }
+    &__title {
+        @include mobile-h2;
+        margin-bottom: 20px;
+        @include tablet-breakpoint {
+            @include tablet-h2;
+            @include desktop-breakpoint {
+                margin-bottom:30px;
+            }
+        }
+    }
+}
+
+.itemavailabilityform-title {
+    @include mobile-h3;
+    margin-top: 15px;
+    @include tablet-breakpoint {
+        @include tablet-h3;
+        @include desktop-breakpoint {
+            margin-top: 25px;
+        }
+    }
+}
+
+.itemavailabilityform-input {
+    @include form-field;
+    @include mobile-p2;
+    margin-bottom:30px;
+    @include tablet-breakpoint {
+        @include tablet-p2;
+    }
+}
+
+.itemavailabilityform-button__instock {
+    font-family: $titillium-web;
+    font-size: 13px;
+    color: $slate;
+    line-height: 20px;
+    margin-right: 50px;
+    &:hover, :active {
+        color: $instock-black;
+    }
+}
+
+.itemavailabilityform-button__outstock {
+    font-family: $titillium-web;
+    font-size: 13px;
+    color: $slate;
+    line-height: 20px;
+    &:hover, :active {
+        color: $instock-black;
+    }
+}
+
+.itemavailabilityform-button {
+    margin-right: 7px;
+}
+
+.inventorybutton-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: $light-grey;
+    padding: 15px 13px;
+     @include tablet-breakpoint {
+        justify-content: flex-end;
+    }
+    &__cancel {
+        border: 1px solid $cloud;
+        border-radius: 20px;
+        padding: 8px 45px;
+        background-color: $white;
+        color: $graphite;
+        font-family: $titillium-web;
+        margin-right:10px;
+        &:hover {
+            border: 1px solid $instock-indigo;
+            color: $instock-indigo;
+        }
+        @include tablet-breakpoint {
+            padding: 8px 16px;
+        }
+    }
+}
+
+.inventorybutton-container__add {
+    border: 1px solid $instock-indigo;
+    border-radius: 20px;
+    background-color: $instock-indigo;
+    color: $white;
+    font-family: $titillium-web;
+    font-size: 0.8rem;
+    padding: 8px 40px;
+    position: relative;
+    &:hover {
+        background-color: $graphite;
+    }
+        &__plusicon {
+            position: absolute;
+            top: 14px;
+            left: 30px;
+            width: 11px;
+            @include tablet-breakpoint {
+                left: 5px;
+            }
+            @include desktop-breakpoint {
+                left: 3px;
+            }
+        }
+    @include tablet-breakpoint {
+        padding: 8px 20px;
+    }    
+}
+

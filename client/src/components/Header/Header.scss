@@ -1,0 +1,125 @@
+@use "../../styles/partials/call-to-actions" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/form-fields" as *;
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/layout-grid" as *;
+@use "../../styles/partials/type-kit" as *;
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: $graphite;
+  height:200px;
+
+  @include tablet-breakpoint {
+    height:186px;
+  }
+
+  &__wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: pxToRem(30.39) pxToRem(16) pxToRem(88);
+
+    @include tablet-breakpoint {
+      max-width: pxToRem(1020);
+      flex-direction: row;
+      justify-content: space-between;
+      padding: pxToRem(38.39) 0 pxToRem(130.71);
+    }
+
+    @include desktop-breakpoint {
+      padding-right:pxToRem(130);
+      padding-left: pxToRem(130);
+      max-width: pxToRem(1280);
+    }
+  }
+
+  &__logo {
+     margin: 0;
+  }
+}
+
+.primary-nav {
+  width: 100%;
+  padding-top: pxToRem(16);
+
+  @include tablet-breakpoint {
+    padding-top:0;
+  }
+
+  &__list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet-breakpoint {
+      justify-content: flex-end;
+    }
+  }
+  &__item1-wrapper {
+    padding-right: pxToRem(16);
+  }
+
+  &__item1 {
+    @include regular-style(pxToRem(13), pxToRem(20), $cloud);
+    background-color: $instock-black;
+    border-radius: pxToRem(20);
+    border-width: 0;
+    height: pxToRem(36);
+    width: pxToRem(164);
+    text-align: center;
+    padding: pxToRem(8) 0;
+    cursor: pointer;
+
+       &:hover{
+         color:$white;
+       }
+
+       &:focus {
+         color:$white;
+      }
+
+    @include tablet-breakpoint {
+      @include bold-style(14px, 22px, $cloud);
+      height: pxToRem(38);
+      width: pxToRem(107);
+      padding: pxToRem(8) pxToRem(16);
+    }
+  }
+
+  &__item2 {
+    @include regular-style(pxToRem(13), pxToRem(20), $cloud);
+    background-color: $graphite;
+    border-radius: pxToRem(20);
+    border-width: 0;
+    height: pxToRem(36);
+    width: pxToRem(164);
+    text-align: center;
+    padding: pxToRem(8) 0;
+    cursor: pointer;
+
+       &:hover{
+         color:$white;
+       }
+
+       &:focus {
+         color:$white;
+      }
+
+    @include tablet-breakpoint {
+      @include bold-style(14px, 22px, $cloud);
+      height: pxToRem(38);
+      width: pxToRem(107);
+      padding: pxToRem(8) pxToRem(16);
+    }
+  }
+}

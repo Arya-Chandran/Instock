@@ -1,0 +1,86 @@
+@use '../../styles/partials/type-kit' as *;
+@use '../../styles/partials/call-to-actions' as *;
+@use '../../styles/partials/layout-grid' as *;
+@use '../../styles/partials/colors' as *;
+
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin: 0 auto;
+  &--visible {
+    display: block;
+  }
+  &--hidden {
+    display: none;
+  }
+}
+
+.delete {
+  position: absolute;
+  left: calc(50% - pxToRem(187.5));
+  background: $white;
+  box-sizing: border-box;
+  width: pxToRem(375);
+  height: pxToRem(667);
+  border-radius: pxToRem(3);
+  box-shadow: 0px pxToRem(2) pxToRem(5) rgba(19, 24, 44, 0.1);
+  padding: 0 pxToRem(16);
+  z-index: 10;
+  @include tablet-breakpoint {
+    width: pxToRem(672);
+    height: pxToRem(262);
+    position: absolute;
+    left: calc(50% - 21rem);
+    top: 11.5625rem;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include tablet-breakpoint {
+      padding-left: pxToRem(48);
+    }
+  }
+  &__close {
+    width: pxToRem(14);
+    height: pxToRem(14);
+    align-self: flex-end;
+    margin: pxToRem(16) pxToRem(5) 0 0;
+  }
+  &__title {
+    @include mobile-h1;
+    margin: pxToRem(16) 0 0;
+    text-align: left;
+  }
+  &__text {
+    @include mobile-p1;
+    margin-top: pxToRem(16);
+    text-align: left;
+    @include tablet-breakpoint {
+      max-width: pxToRem(500);
+    }
+  }
+  &__container {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: pxToRem(40);
+    @include tablet-breakpoint {
+      justify-content: flex-end;
+    }
+  }
+  &__btn {
+    width: 100%;
+    margin-left: pxToRem(16);
+    @include tablet-breakpoint {
+      width: auto;
+      margin: 0 pxToRem(48) 0 pxToRem(16);
+    }
+  }
+}

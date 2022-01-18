@@ -1,0 +1,156 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/colors" as *;
+@use "../../styles/partials/type-kit" as *;
+@use "../../styles/partials/layout-grid" as *;
+@use "../../styles/partials/form-fields" as *;
+@use "../../styles/partials/call-to-actions" as *;
+
+.inventory-item-details {
+  min-width: $mobile-width;
+  padding: 0 pxToRem(16);
+  background-color: $light-grey;
+  @include tablet-breakpoint {
+    padding: 0 pxToRem(32);
+  }
+  &__container {
+    position: relative;
+    top: pxToRem(-64);
+    border-radius: pxToRem(3);
+    box-shadow: 0 pxToRem(2) pxToRem(5) rgba($instock-black, 0.1);
+    background-color: $white;
+    @include tablet-breakpoint {
+      top: pxToRem(-94);
+      max-width: pxToRem(1020);
+      margin: 0 auto;
+    }
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet-breakpoint {
+      padding: 1rem;
+    }
+  }
+
+  &__name-container {
+    padding: 1rem;
+    display: flex;
+    @include mobile-h2;
+    @include tablet-breakpoint {
+      @include tablet-h2;
+    }
+  }
+
+  &__item-edit {
+    padding: 1rem;
+  }
+
+  &__details-container {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 1px solid $cloud;
+    padding: 1rem;
+  }
+
+  &__details-left {
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet-breakpoint {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      padding-right: 1rem;
+    }
+  }
+
+  &__details-right {
+    display: flex;
+    flex-wrap: wrap;
+    @include tablet-breakpoint {
+      display: flex;
+      flex-wrap: wrap;
+      width: 50%;
+      padding-left: 1rem;
+    }
+  }
+
+  &__item-description {
+    padding: 1rem;
+    width: 100%;
+    @include tablet-breakpoint {
+      padding: 0 1rem 1rem;
+      margin: 1rem 0 0;
+      border-right: 1px solid $cloud;
+    }
+  }
+
+  &__category {
+    padding: 0 1rem 0.5rem;
+    width: 100%;
+    @include tablet-breakpoint {
+      padding: 1rem 1rem 0;
+      margin: 0 0 1rem;
+      border-right: 1px solid $cloud;
+    }
+  }
+
+  &__status {
+    padding: 0.5rem 1rem;
+    width: 50%;
+  }
+
+  &__quantity {
+    padding: 0.5rem 1rem;
+    width: 50%;
+  }
+
+  &__warehouse {
+    padding: 0.5rem 1rem;
+    width: 100%;
+  }
+
+  &__heading {
+    @include mobile-h4;
+    margin-bottom: 0.5rem;
+    @include tablet-breakpoint {
+      @include tablet-h4;
+    }
+  }
+
+  &__body {
+    @include mobile-p2;
+    @include tablet-breakpoint {
+      @include tablet-p2;
+    }
+
+    &--stock-status-true {
+      width: 4.375rem;
+      text-transform: uppercase;
+      background: rgba(21, 132, 99, 0.07);
+      border-radius: 20px;
+      padding: 0.25rem 0.5rem;
+      @include mobile-h3;
+      color: $green;
+      @include tablet-breakpoint {
+        color: $green;
+      }
+    }
+
+    &--stock-status-false {
+      width: 6.25rem;
+      text-transform: uppercase;
+      background: rgba(201, 69, 21, 0.07);
+      border-radius: 20px;
+      padding: 0.25rem 0.5rem;
+      @include mobile-h3;
+      color: $red;
+      @include tablet-breakpoint {
+        color: $red;
+      }
+    }
+  }
+}
